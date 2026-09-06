@@ -2,6 +2,7 @@ services:
   - type: web
     name: geoinsight-api
     runtime: python
+    pythonVersion: "3.13.5"
     plan: free
     rootDir: .
     buildCommand: pip install -r backend/requirements.txt

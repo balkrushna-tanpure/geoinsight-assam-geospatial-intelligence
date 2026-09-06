@@ -30,20 +30,21 @@ Do not commit `backend/.env`. It is ignored by `.gitignore`.
 1. Open Render and choose **New + Web Service**.
 2. Connect the GitHub repository.
 3. Select Python runtime.
-4. Use these values:
+4. Set Python version to `3.13.5`.
+5. Use these values:
 
 ```text
 Build command: pip install -r backend/requirements.txt
 Start command: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
 ```
 
-5. Add environment variable:
+6. Add environment variable:
 
 ```text
 DATABASE_URL=<your hosted PostgreSQL connection string>
 ```
 
-6. Deploy and copy the Render URL, for example:
+7. Deploy and copy the Render URL, for example:
 
 ```text
 https://geoinsight-api.onrender.com
