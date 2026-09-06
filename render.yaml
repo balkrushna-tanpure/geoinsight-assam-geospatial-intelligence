@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: geoinsight-api
+    runtime: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: GOVERNMENT_DATA_PATH
+        value: ./backend/data/historical_environment.csv
